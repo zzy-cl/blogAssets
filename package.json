@@ -1,0 +1,15 @@
+{
+  "name": "blogassets",
+  "version": "1.0.30",
+  "description": "个人博客的静态资源库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blogAssets",
+    "呓语の小屋"
+  ],
+  "author": "zzy",
+  "license": "ISC"
+}

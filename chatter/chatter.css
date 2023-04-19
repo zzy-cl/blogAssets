@@ -1,0 +1,263 @@
+.talk_item {
+    background: var(--card-bg);
+    border: 1px solid #ffffff;
+    box-shadow: 0 5px 10px rgb(200 200 200 / 10%);
+    transition: all .3s ease-in-out;
+    border-radius: 14px;
+}
+
+.talk_item:hover {
+    border-color: var(--default-bg-color);
+}
+
+/* 页面初始化结束 */
+
+#talk {
+    margin: 0;
+}
+
+#talk .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#talk .loading img {
+    width: 200px;
+}
+
+.talk_item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    margin: 0 !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+
+.talk_bottom,
+.talk_meta {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.talk_bottom {
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+span.talk_nick {
+    color: #6dbdc3;
+    font-size: 1.2rem;
+}
+
+svg.is-badge.icon {
+    width: 15px;
+    margin-left: 5px;
+    padding-top: 3px;
+}
+
+span.talk_date {
+    opacity: 0.6;
+}
+
+.talk_content {
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.zone_imgbox {
+    display: flex;
+    flex-wrap: wrap;
+    --w: calc(25% - 8px);
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.zone_imgbox a {
+    display: block;
+    border-radius: 12px;
+    width: var(--w);
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.zone_imgbox img {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    object-fit: cover;
+}
+
+/* 底部 */
+
+.talk_bottom {
+    opacity: 0.9;
+}
+
+span.talk_tag {
+    font-size: 14px;
+}
+
+.talk_content>a {
+    margin: 0 3px;
+    color: #ff7d73 !important;
+}
+
+.talk_content>a:hover {
+    text-decoration: none !important;
+    color: #ff5143 !important
+}
+
+/* 提醒 */
+
+.limit {
+    transition: all .3s ease-in-out;
+    color: rgba(75, 75, 75, 0.7);
+}
+
+[data-theme=dark] .limit {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.limit {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--font-color);
+}
+
+@media screen and (max-width: 900px) {
+    .zone_imgbox {
+        --w: calc(35% - 5px);
+    }
+
+    #talk {
+        margin: 0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zone_imgbox {
+        gap: 5px;
+    }
+
+    .zone_imgbox {
+        --w: calc(50% - 3px);
+    }
+
+    span.talk_date {
+        font-size: 14px;
+    }
+}
+
+/* -----首页动态显示----- */
+/* maintop */
+
+div#main_top {
+    z-index: 1;
+    max-width: 1200px;
+    margin: 20px auto -15px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+@media screen and (min-width: 2000px) {
+    div#main_top {
+        max-width: 1500px;
+    }
+}
+
+#chatter-talk {
+    border-radius: 25px;
+    box-shadow: none;
+    border: 1px solid #e0e3ed;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+    min-height: 50px;
+    background: var(--card-bg);
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+#chatter-talk:hover {
+    border-color: #49b1f5;
+    box-shadow: none;
+}
+
+#chatter-talk,
+#chatter-talk a {
+    color: var(--font-color);
+}
+
+#chatter-talk svg.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.15em;
+    fill: currentColor;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+#chatter-talk .item i {
+    margin-left: 5px;
+}
+
+#chatter-talk>i {
+    font-size: 1.1rem;
+}
+
+#chatter-talk .talk-list {
+    flex: 1;
+    max-height: 32px;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#chatter-talk .talk-list :hover {
+    color: #49b1f5 !important;
+    transition: all .2s ease-in-out;
+}
+
+#chatter-talk .talk-list li {
+    list-style: none;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    #chatter-talk .talk-list {
+        text-align: center;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    div#main_top {
+        padding: 0 5px;
+    }
+}

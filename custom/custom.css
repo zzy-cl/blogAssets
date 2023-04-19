@@ -1,0 +1,186 @@
+/* -----字体----- */
+/* 仓耳渔阳体 W03 */
+@font-face {
+    font-family: "CEYYT3";
+    src: url("https://npm.elemecdn.com//blogassets/font/CEYYT3.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 得意黑斜体 */
+@font-face {
+    font-family: "DYHXT";
+    src: url("https://npm.elemecdn.com//blogassets/font/DYHXT.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FiraCode */
+@font-face {
+    font-family: 'FiraCode';
+    src: url('https://cdn.staticfile.org/firacode/6.2.0/woff2/FiraCode-Medium.woff2') format('woff2'),
+        url("https://cdn.staticfile.org/firacode/6.2.0/woff/FiraCode-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* iconfont图标 */
+.iconfont {
+    font-size: 1.25em !important;
+    vertical-align: middle;
+}
+
+/* 加载背景图 */
+.loading-img {
+    background: url(https://imagecloud.zhaozeyu.top/2023/03/10/640afab14b960.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/* -----全屏一张背景----- */
+/* 页脚与头图透明 */
+#footer {
+    background: transparent !important;
+}
+
+#page-header {
+    background: transparent !important;
+}
+
+/* 白天模式遮罩透明 */
+#footer::before {
+    background: transparent !important;
+}
+
+#page-header::before {
+    background: transparent !important;
+}
+
+/* 夜间模式遮罩透明 */
+[data-theme="dark"] #footer::before {
+    background: transparent !important;
+}
+
+[data-theme="dark"] #page-header::before {
+    background: transparent !important;
+}
+
+/* -----页面样式优化----- */
+:root {
+    --trans-light: rgba(255, 255, 255, 0.8);
+    --trans-dark: rgba(25, 25, 25, 0.8);
+    --border-style: 1px solid rgb(170, 170, 170);
+    --backdrop-filter: blur(5px) saturate(150%);
+    --readmode-light: rgba(150, 200, 175, 0.5)
+}
+
+/* 首页文章卡片 */
+/* 侧边栏卡片 */
+/* 归档、普通页面、文章卡片 */
+#recent-posts>.recent-post-item,
+#aside-content .card-widget,
+div#archive,
+div#page,
+div#post {
+    background: var(--trans-light);
+    border: var(--border-style);
+    border-radius: 20px;
+    backdrop-filter: var(--backdrop-filter);
+}
+
+/* 导航栏 */
+#page-header.nav-fixed #nav {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+}
+
+[data-theme="dark"] #page-header.nav-fixed #nav {
+    background: var(--trans-dark) !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] #recent-posts>.recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] div#post,
+[data-theme="dark"] div#archive,
+[data-theme="dark"] div#page {
+    background: var(--trans-dark);
+}
+
+/* 夜间模式页脚页头遮罩透明 */
+[data-theme="dark"] #footer::before {
+    background: transparent !important;
+}
+
+[data-theme="dark"] #page-header::before {
+    background: transparent !important;
+}
+
+/* 阅读模式 */
+.read-mode #aside-content .card-widget {
+    background: var(--readmode-light) !important;
+}
+
+.read-mode div#post {
+    background: var(--readmode-light) !important;
+}
+
+/* 夜间模式下的阅读模式 */
+[data-theme="dark"] .read-mode #aside-content .card-widget {
+    background: var(--trans-dark) !important;
+    color: var(--trans-light);
+}
+
+[data-theme="dark"] .read-mode div#post {
+    background: var(--trans-dark) !important;
+    color: var(--trans-light);
+}
+
+/* 按钮 */
+#aside-content .card-info #card-info-btn,
+.post-reward .reward-button {
+    border-radius: 20px;
+}
+
+/* -----评论输入提醒----- */
+/* 设置文字内容 :nth-child(1)的作用是选择第几个 */
+.wl-header>.wl-header-item:nth-child(1)::before {
+    content: '给自己起一个特色昵称吧⭐';
+}
+
+.wl-header>.wl-header-item:nth-child(2)::before {
+    content: '收到回复将会发送到您的邮箱📧';
+}
+
+.wl-header>.wl-header-item:nth-child(3)::before {
+    content: '可以通过昵称访问您的网站🔗';
+}
+
+/* 当用户点击输入框时显示 */
+.wl-header>.wl-header-item:focus-within::before {
+    display: block;
+}
+
+/* 主内容区 */
+.wl-header>.wl-header-item::before {
+    /* 先隐藏起来 */
+    display: none;
+    /* 绝对定位 */
+    position: absolute;
+    /* 向上移动60像素 */
+    top: -80px;
+    /* 文字强制不换行，防止left:50%导致的文字换行 */
+    white-space: nowrap;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 距离左边50% */
+    left: 50%;
+    /* 然后再向左边挪动自身的一半，即可实现居中 */
+    transform: translate(-50%);
+    /* 填充 */
+    padding: 14px 18px;
+    background: #444;
+    color: #fff;
+}
