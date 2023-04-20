@@ -1,0 +1,18 @@
+name: blogAssets-publish
+# 选定分支，当 main 分支获得推送时运行工作流
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish_npm:
+    run-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
