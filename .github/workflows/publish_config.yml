@@ -8,7 +8,9 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
+      # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v3
+      # https://github.com/marketplace/actions/setup-node-js-environment
       - uses: actions/setup-node@v3
         with:
           node-version: "18.x"
